@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+:root{
+    --green:#0d9979;
+}
+
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all .5s cubic-bezier(.37,1.14,.26,1.24);
+    scroll-behavior: smooth;
+}
+
+*::selection{
+    background:var(--green);
+    color:#fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+.btn{
+    height:3.5rem;
+    width:15rem;
+    background:none;
+    outline:none;
+    border:.2rem solid var(--green);
+    color:var(--green);
+    font-size: 2rem;
+    margin:1rem 0;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+}
+
+.btn::before, .btn::after{
+    position: absolute;
+    content: '';
+    top:0; 
+    left:0;
+    height: 100%;
+    width: 100%;
+    background:var(--green);
+    z-index: -1;
+    transition: all 0.5s cubic-bezier(.37,1.14,.26,1.24);
+}
+
+.btn::before{
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.btn:hover:before{
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+}
+
+.btn::after{
+    clip-path: polygon(100% 100%, 100% 100%, 100% 100%);
+}
+
+.btn:hover:after{
+    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+}
+
+.btn:hover{
+    background-color: var(--green);
+    color:#fff;
+}
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color:#555;
+    padding:1rem;
+    padding-top: 7rem;
+}
+
+.heading i{
+    color:var(--green);
+    font-size: 2rem;
+}
+
